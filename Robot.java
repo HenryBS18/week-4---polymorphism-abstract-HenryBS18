@@ -1,10 +1,12 @@
 public abstract class Robot {
+    // Declare variables
     private String name;
     private String type;
     private int health;
     private int maxHealth;
     private int power;
 
+    // Constructor
     public Robot(String name, String type, int maxHealth, int power) {
         this.name = name;
         this.type = type;
@@ -13,6 +15,7 @@ public abstract class Robot {
         this.power = power;
     }
 
+    // Getter and Setter 
     public String getName() {
         return name;
     }
@@ -45,23 +48,23 @@ public abstract class Robot {
         this.power = power;
     }
 
+    // Move function to move robots to enemy location
     public void move() {
-        // implementation to move the robot to a new location
         System.out.println("Robot " + name + " is moving to enemy location.");
     }
 
+    // Attack function to attack enemy
     public void attack() {
-        // implementation to cause the robot to attack an enemy
         System.out.println("Robot " + name + " is attacking an enemy.");
     }
 
+    // Defend function to defend against enemy's attack
     public void defend() {
-        // implementation to cause the robot to defend itself against an enemy attack
         System.out.println("Robot " + name + " is defending against an enemy attack.");
     }
 
-    public void heal(Robot meleeRobot2) {
-        // implementation to cause the robot to heal itself
+    // Heal function to heal the robots
+    public void heal() {
         System.out.println("Robot " + name + " is healing itself.");
     }
 }

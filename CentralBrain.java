@@ -1,11 +1,14 @@
 public class CentralBrain extends Robot implements CombiningRobot {
+    // Declare variables
     private Robot[] componentRobots;
 
+    // Constructor
     public CentralBrain(String name, int maxHealth, int power, Robot[] componentRobots) {
         super(name, "central brain", maxHealth, power);
         this.componentRobots = componentRobots;
     }
 
+    // Getter and Setter
     public Robot[] getComponentRobots() {
         return componentRobots;
     }
@@ -14,36 +17,33 @@ public class CentralBrain extends Robot implements CombiningRobot {
         this.componentRobots = componentRobots;
     }
 
+    // Override move method
     @Override
     public void move() {
-        // implementation for central brain move
         System.out.println("Robot " + getName() + " is moving the whole robot.");
     }
 
+    // Override attack method
     @Override
     public void attack() {
-        // implementation for central brain attack
         System.out.println("Robot " + getName() + " is using an ultimate to attack enemy");
     }
 
+    // Override defend method
     @Override
     public void defend() {
-        // implementation for central brain defend
         System.out.println("Robot " + getName() + " is using shield to defend");
     }
 
+    // Override heal method
     @Override
-    public void heal(Robot robot) {
-        // implementation for central brain heal
+    public void heal() {
         System.out.println("Robot " + getName() + " is healing itself.");
-        for (Robot componentRobot : componentRobots) {
-            componentRobot.setHealth(componentRobot.getMaxHealth());
-        }
     }
 
+    // Override combine method
     @Override
     public void combine() {
-        // implementation for central brain combine
         System.out.println("Robot " + getName() + " is combining the robots.");
         setMaxHealth(0);
         setHealth(0);
@@ -55,9 +55,9 @@ public class CentralBrain extends Robot implements CombiningRobot {
         }
     }
 
+    // Override seperate method
     @Override
     public void separate() {
-        // implementation for central brain separate
         System.out.println("Robot " + getName() + " is separating the robots.");
         for (Robot componentRobot : componentRobots) {
             componentRobot.setHealth(getHealth() * componentRobot.getMaxHealth() / getMaxHealth());

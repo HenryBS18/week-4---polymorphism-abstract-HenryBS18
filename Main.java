@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        // create component robots
+        // Create robots
         Robot[] componentRobots = {
             new MeleeRobot("Zilong", "melee", 100, 15),
             new MeleeRobot("Alucard", "melee", 100, 17),
@@ -9,6 +9,7 @@ public class Main {
             new SupportRobot("Estes", "support", 120, 10, 30)
         };
 
+        // Robots data
         for (Robot robot : componentRobots) {
             System.out.println("Robot " + robot.getName() + ", type: " + robot.getType() + ", health: " + robot.getHealth() + ", power: " + robot.getPower());
         }
@@ -20,10 +21,12 @@ public class Main {
             componentRobot.move();
             if (componentRobot instanceof MeleeRobot) {
                 ((MeleeRobot) componentRobot).attack();
-            } else if (componentRobot instanceof RangedRobot) {
+            } 
+            else if (componentRobot instanceof RangedRobot) {
                 ((RangedRobot) componentRobot).attack();
-            } else if (componentRobot instanceof SupportRobot) {
-                ((SupportRobot) componentRobot).heal(componentRobot);
+            } 
+            else if (componentRobot instanceof SupportRobot) {
+                ((SupportRobot) componentRobot).heal();
             }
             System.out.println();
         }
@@ -42,7 +45,7 @@ public class Main {
         centralBrain.move();
         centralBrain.attack();
         centralBrain.defend();
-        centralBrain.heal(centralBrain);
+        centralBrain.heal();
         System.out.println();
 
         // Large robot seperate into smaller robot

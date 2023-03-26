@@ -1,11 +1,14 @@
 public class SupportRobot extends Robot {
+    // Declare variables
     private int healingPower;
 
+    // Constructor
     public SupportRobot(String name, String type, int maxHealth, int power, int healingPower) {
         super(name, type, maxHealth, power);
         this.healingPower = healingPower;
     }
 
+    // Getter and Setter
     public int getHealingPower() {
         return healingPower;
     }
@@ -14,24 +17,20 @@ public class SupportRobot extends Robot {
         this.healingPower = healingPower;
     }
 
+    // Override move method
     @Override
     public void move() {
         System.out.println("Robot " + getName() + " is moving to allies location");
     }
 
+    // Override attack method
     @Override
     public void attack() {
-        // implementation for support robot attack
         System.out.println("Robot " + getName() + " is using a stun gun to immobilize ");
     }
 
-    public void heal(Robot robot) {
-        // implementation for support robot heal
+    // Override heal method
+    public void heal() {
         System.out.println("Robot " + getName() + " is using magic spell to heal allies");
-        int newHealth = robot.getHealth() + healingPower;
-        if (newHealth > robot.getMaxHealth()) {
-            newHealth = robot.getMaxHealth();
-        }
-        robot.setHealth(newHealth);
     }
 }

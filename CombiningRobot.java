@@ -1,4 +1,4 @@
 public interface CombiningRobot {
-    void combine();
-    void separate();
+    public void combine();
+    public void separate();
 }
