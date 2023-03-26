@@ -17,26 +17,25 @@ public class CentralBrain extends Robot implements CombiningRobot {
     @Override
     public void move() {
         // implementation for central brain move
-        System.out.println(getName() + " is moving the whole robot.");
+        System.out.println("Robot " + getName() + " is moving the whole robot.");
     }
 
     @Override
-    public void attack(Robot robot) {
+    public void attack() {
         // implementation for central brain attack
-        System.out.println(getName() + " is using a laser beam to attack " + robot.getName());
-        robot.setHealth(robot.getHealth() - getPower());
+        System.out.println("Robot " + getName() + " is using an ultimate to attack enemy");
     }
 
     @Override
     public void defend() {
         // implementation for central brain defend
-        System.out.println(getName() + " is activating its force field to defend against enemy attacks.");
+        System.out.println("Robot " + getName() + " is using shield to defend");
     }
 
     @Override
     public void heal(Robot robot) {
         // implementation for central brain heal
-        System.out.println(getName() + " is repairing any damaged component robots.");
+        System.out.println("Robot " + getName() + " is healing itself.");
         for (Robot componentRobot : componentRobots) {
             componentRobot.setHealth(componentRobot.getMaxHealth());
         }
@@ -45,7 +44,7 @@ public class CentralBrain extends Robot implements CombiningRobot {
     @Override
     public void combine() {
         // implementation for central brain combine
-        System.out.println(getName() + " is combining the component robots.");
+        System.out.println("Robot " + getName() + " is combining the robots.");
         setMaxHealth(0);
         setHealth(0);
         setPower(0);
@@ -59,7 +58,7 @@ public class CentralBrain extends Robot implements CombiningRobot {
     @Override
     public void separate() {
         // implementation for central brain separate
-        System.out.println(getName() + " is separating the component robots.");
+        System.out.println("Robot " + getName() + " is separating the robots.");
         for (Robot componentRobot : componentRobots) {
             componentRobot.setHealth(getHealth() * componentRobot.getMaxHealth() / getMaxHealth());
         }

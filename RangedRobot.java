@@ -5,9 +5,8 @@ public class RangedRobot extends Robot {
     }
 
     @Override
-    public void attack(Robot robot) {
+    public void attack() {
         // implementation for ranged robot attack
-        System.out.println(getName() + " is shooting a projectile at " + robot.getName());
-        robot.setHealth(robot.getHealth() - getPower());
+        System.out.println("Robot " + getName() + " is using sniper to attack");
     }
 }

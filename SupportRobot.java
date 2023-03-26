@@ -15,15 +15,19 @@ public class SupportRobot extends Robot {
     }
 
     @Override
-    public void attack(Robot robot) {
+    public void move() {
+        System.out.println("Robot " + getName() + " is moving to allies location");
+    }
+
+    @Override
+    public void attack() {
         // implementation for support robot attack
-        System.out.println(getName() + " is using a stun gun to immobilize " + robot.getName());
-        robot.setHealth(robot.getHealth() - (getPower() / 2));
+        System.out.println("Robot " + getName() + " is using a stun gun to immobilize ");
     }
 
     public void heal(Robot robot) {
         // implementation for support robot heal
-        System.out.println(getName() + " is healing allies");
+        System.out.println("Robot " + getName() + " is using magic spell to heal allies");
         int newHealth = robot.getHealth() + healingPower;
         if (newHealth > robot.getMaxHealth()) {
             newHealth = robot.getMaxHealth();

@@ -45,11 +45,9 @@ public abstract class Robot {
         this.power = power;
     }
 
-    public abstract void attack(Robot robot);
-
     public void move() {
         // implementation to move the robot to a new location
-        System.out.println("Robot " + name + " is moving to a new location.");
+        System.out.println("Robot " + name + " is moving to enemy location.");
     }
 
     public void attack() {
@@ -66,6 +64,4 @@ public abstract class Robot {
         // implementation to cause the robot to heal itself
         System.out.println("Robot " + name + " is healing itself.");
     }
-
-    public void useAbility(){}
 }
